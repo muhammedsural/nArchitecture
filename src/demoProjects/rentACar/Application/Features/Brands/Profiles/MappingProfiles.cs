@@ -2,11 +2,6 @@
 using Application.Features.Brands.Dtos;
 using AutoMapper;
 using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Features.Brands.Profiles
 {
@@ -14,8 +9,8 @@ namespace Application.Features.Brands.Profiles
     {
         public MappingProfiles()
         {
-            CreateMap<Brand,CreatedBrandDto>().ReverseMap();
-            CreateMap<Brand,CreateBrandCommand>().ReverseMap();
+            CreateMap<Brand, CreatedBrandDto>().ReverseMap(); // Brand ile CreatedBrandDto ile karşılaşırsan bunları maple tersinirde olabilir.
+            CreateMap<Brand, CreateBrandCommand>().ReverseMap(); // Brand ile CreateBrandCommand ile karşılaşırsan bunları maple tersinirde olabilir.
         }
     }
 }

@@ -1,12 +1,7 @@
-﻿using Application.Features.Brands.Rules;
-using MediatR;
+﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using Application.Features.Brands.Rules;
 
 namespace Application
 {
@@ -14,9 +9,10 @@ namespace Application
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
+            //Aplication katmanı için bütün injectionları yaptığımız yer.
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddMediatR(Assembly.GetExecutingAssembly());//MediatR a bütün handller ları tara diyoruz bunları projede bulup tutuyor apide bunları kullanıp request çekiyoruz.
 
             services.AddScoped<BrandBusinessRules>();
 

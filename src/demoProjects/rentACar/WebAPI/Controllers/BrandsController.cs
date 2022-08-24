@@ -13,7 +13,7 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> Add([FromBody] CreateBrandCommand createBrandCommand)
         {
             CreatedBrandDto result = await Mediator.Send(createBrandCommand);
-            return Created("", result);
+            return Created("", result);//Tırnak içerisinde istek adresinide erebiliriz.
         }
     }
 }
