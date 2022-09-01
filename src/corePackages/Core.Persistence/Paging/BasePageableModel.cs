@@ -1,5 +1,6 @@
 ﻿namespace Core.Persistence.Paging;
 
+//Sayfalama yapısı için gereken bilgiler burada tutuluyor.
 public class BasePageableModel
 {
     public int Index { get; set; }

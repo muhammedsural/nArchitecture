@@ -35,7 +35,7 @@ namespace Application.Features.Brands.Commands.CreateBrand
 
             public async Task<CreatedBrandDto> Handle(CreateBrandCommand request, CancellationToken cancellationToken)
             {
-                await _brandBusinessRules.SomeFeatureEntityNameCanNotBeDuplicatedWhenInserted(request.Name);//Aynı isimde ürün olup olmadığını kontrol ediyorum
+                await _brandBusinessRules.BrandNameCanNotBeDuplicatedWhenInserted(request.Name);//Aynı isimde ürün olup olmadığını kontrol ediyorum
 
                 Brand mappedBrand = _mapper.Map<Brand>(request);//Veritabanına nesne göndermemiz lazım gönderilen command ile entity eşler burada gelen commandi brande mapledik.
                 Brand createdBrand = await _brandRepository.AddAsync(mappedBrand);//Yukarıda maplediğim commendi veri tabanına gönderiyorum, nesneyi yakalıyorum
